@@ -32,7 +32,7 @@ type getFirst = GetFirstStr<`a fgsgd`, 'a f'>
 
 // 替换字符
 type Replace<Str extends string, From extends string, To extends string> = Str extends `${infer str}${From}${infer end}` ? `${str}${To}${end}` : Str
-type ss = Replace<'2sfdsfdsf', '2', '1dfdf'>
+type ss = Replace<'2sfds2fdsf', '2', '1dfdf'>
 
 // 去除左边空白字符
 type TrimLeft<Str extends string> = Str extends `${(' ' | '\n' | '\t')}${infer str}` ? TrimLeft<str> : Str;
