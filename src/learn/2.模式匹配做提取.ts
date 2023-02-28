@@ -54,6 +54,7 @@ type sdf = getFuncParameters<(s: string, gds: number, dfgds: {}) => unknown>
 // 提取函数的返回值
 type getFuncReturn<T extends Function> = T extends (...args: any[]) => infer R ? R : never
 type sdfs = getFuncReturn<() => string>
+type get = GetThisParameterType<typeof dong.hello>
 
 // class
 class Dong {
@@ -76,7 +77,6 @@ type GetThisParameterType<T>
   = T extends (this: infer ThisType, ...args: any[]) => any
   ? ThisType
   : unknown;
-type get = GetThisParameterType<typeof dong.hello>
 
 // 提取构造器参数类型
 interface PersonCon {
